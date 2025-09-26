@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Me</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="info" href="info.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #fbe4ff, #e0f7ff);
+      color: #4a4a4a;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 15vw;
+      min-width: 150px;
+      max-width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #45fe00;
+      overflow-x: hidden;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidenav a {
+      color: #000000;
+      padding: 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .sidenav a:hover,
+    .sidenav a.active {
+      background-color: #fff;
+      color: #caa6f2;
+      border-left: 4px solid #caa6f2;
+    }
+
+    .content {
+      margin-left: 15vw;
+      padding: 2vw 3vw;
+      max-width: 100vw;
+    }
+
+    h2 {
+      color: #0400ff;
+      font-size: 2vw;
+      max-font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p,
+    li {
+      font-size: 1.2vw;
+      max-font-size: 16px;
+      line-height: 1.8;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    section {
+      background-color: rgba(255, 0, 255 );
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .hobby-img {
+      width: 25vw;
+      max-width: 160px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+      }
+      .sidenav a {
+        float: left;
+        padding: 12px;
+        font-size: 14px;
+        border-left: none;
+      }
+      .content {
+        margin-left: 0;
+        padding: 10px 15px;
+      }
+      h2 {
+        font-size: 5vw;
+      }
+      p, li {
+        font-size: 4vw;
+      }
+      .hobby-img {
+        width: 40vw;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidenav">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#info" class="nav-link">Info</a>
+    <a href="#additional" class="nav-link">Additional Info</a>
+    <a href="#hobbies" class="nav-link">Hobbies & Vibes</a>
+  </div>
+
+  <div class="content">
+    <section id="home">
+      <h2>Home</h2>
+      <p>
+        Hey dare welcome to my very first website! I’m emilio. 
+    </section>
+
+    <section id="info">
+      <h2>Info</h2>
+      <p>
+        so this is my first website not pretty but its good enough
+      </p>
+      <p>
+        When I’m not staring at code, I’m usually gaming, drawing dumb sketches, or blasting music in my headphones. Honestly, I’m just trying to keep things fun and chill.
+      </p>
+      <p>
+        This site’s basically my beginner’s attempt to say “hey, this is me” without boring you too much.
+      </p>
+    </section>
+
+    <section id="additional">
+      <h2>Additional Info</h2>
+      <ul>
+        <li>i not a big fan of computer programing– its no joke really got me thinking.</li>
+        <li>i like being fat than skinny. my opinion</li>
+        <li>Big fan of lo-fi beats  – helps me focus and chill.</li>
+        <li>I like making cool edits .</li>
+        <li>im always late school which i gotta fix.</li>
+      </ul>
+      <p>
+        More random stuff might show up here when I’m less lazy 
+      </p>
+    </section>
+
+    <section id="hobbies">
+      <h2>activity hobbies</h2>
+      <ul>
+        <li> <strong>working out</strong> –i like the idea of a good looking body.</li>
+        <li> <strong>Gaming</strong> – i just like challenging my slef learning new skills.</li>
+        <li> <strong>Eating</strong> – while i like working out i also enojy eating.</li>
+        <li> <strong>Sleeping</strong> – i love Sleeping from time to time cous its nice.</li>
+      </ul>
+
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <img
+          
+          alt="Making music with headphones"
+          class="hobby-img"
+        />
+        <img
+          src="https://images.app.goo.gl/HHg3p3HV4ZFgPrPH6
+          alt="Gaming setup"
+          class="hobby-img"
+        />
+        <img
+          src="
+          alt="Burger and fries meal"
+          class="hobby-img"
+        />
+        <img
+          src="=
+          alt="Sleeping peacefully"
+          class="hobby-img"
+        />
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const fromTop = window.scrollY + 100;
+
+      navLinks.forEach((link) => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
